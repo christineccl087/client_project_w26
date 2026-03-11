@@ -1,0 +1,249 @@
+:root {
+  --um-blue: #00274C;
+  --um-maize: #FFCB05;
+  --white: #FFFFFF;
+  --black: #000000;
+  --ash: #989C97;
+  --text: #1F2933;
+  --link: #005EA6;
+  --max-width: 72rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.9rem;
+  --radius-lg: 1.25rem;
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.25rem;
+  --space-5: 1.75rem;
+  --space-6: 2.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Atkinson Hyperlegible", "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  text-align: left;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-3);
+  top: -6rem;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  background: var(--white);
+  color: var(--um-blue);
+  border: 3px solid var(--um-maize);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+}
+
+.skip-link:focus {
+    top: 0.75rem;
+}
+
+header {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background:
+    linear-gradient(135deg, rgba(0, 39, 76, 0.96), rgba(0, 39, 76, 0.88)),
+    linear-gradient(180deg, rgba(255, 203, 5, 0.18), rgba(255, 203, 5, 0));
+  color: var(--white);
+  border-bottom: 0.35rem solid var(--um-maize);
+}
+
+header img,
+footer img {
+  width: clamp(1rem, 22vw, 7.5rem);
+  height: auto;
+  display: block;
+  border-radius: 0.2rem;
+  margin: 0 auto;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+nav li {
+  display: flex;
+}
+
+nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+  text-align: center;
+  background: var(--white);
+  color: var(--um-blue);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+nav a:hover,
+nav a:focus{
+  border-color: var(--um-maize);
+}
+
+nav a.active {
+  background: var(--um-maize);
+  color: var(--um-blue);
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.2;
+  color: var(--um-blue);
+  font-family: "IBM Plex Sans", "Atkinson Hyperlegible", "Segoe UI", Arial, sans-serif;
+}
+
+header h1 {
+  color: var(--white);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  max-width: 20ch;
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(1.45rem, 3vw, 1.95rem);
+}
+
+h3 {
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+}
+
+p,
+li {
+  max-width: 68ch;
+}
+
+strong {
+  color: var(--um-blue);
+}
+
+main {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+  padding: var(--space-4);
+  display: grid;
+  gap: var(--space-5);
+}
+
+section,
+article {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--white);
+  /* border: 1px solid #d9e2ec; */
+  border-radius: var(--radius-sm);
+}
+
+img,
+iframe {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+img {
+  height: auto;
+}
+
+iframe {
+  aspect-ratio: 16 / 9;
+  min-height: 13rem;
+}
+
+a {
+  color: var(--link);
+  text-underline-offset: 0.18rem;
+}
+
+a:hover {
+  color: var(--um-blue);
+}
+
+a:focus,
+a:focus-visible{
+  outline: 3px solid var(--um-maize);
+  outline-offset: 3px;
+  border-radius: 0.2rem;
+}
+
+section > ul,
+section > ol {
+  margin: 0;
+  padding-left: 0;
+  list-style-position: inside;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-3);
+}
+
+section > ul li,
+section > ol li {
+  background: var(--surface);
+  border: 1px solid #d9e2ec;
+  border-left: 0.35rem solid var(--um-maize);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+footer {
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  background: var(--um-blue);
+  color: var(--white);
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: var(--um-maize);
+  font-weight: 700;
+}
+
+footer a:hover,
+footer a:focus,
+footer a:focus-visible {
+  color: var(--white);
+}
+
+main section:nth-of-type(3) > div:last-of-type {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  border: 1px solid #d9e2ec;
+}
